@@ -39,7 +39,7 @@ public class Employee {
 
 class employeeTest {
     public static void main(String[] args) {
-        Employee workerOne = new Employee("Cornerstone", "Ephraim", 15000);
+        Employee workerOne = new Employee("Cornerstone", "Ephraim", 15500);
         Employee workerTwo = new Employee("Daniel", "Akintunde", 15000);
 
         System.out.println(workerOne.getFirstName() + " " + workerOne.getLastName() + "'s yearly salary is : "

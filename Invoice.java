@@ -1,11 +1,11 @@
 public class Invoice {
-    // instance variables
+    // initialise instance variables
     private String partNumber;
     private String partDescription;
     private int quantityPurchased;
     private double pricePerItem;
 
-    // get methods
+    // create get methods
     public String getPartNumber() {
         return this.partNumber;
     }
@@ -22,7 +22,7 @@ public class Invoice {
         return this.pricePerItem;
     }
 
-    // setters for the instance variables
+    // create set methods
     public void setPartNumber(String partnumber) {
         this.partNumber = partnumber;
     }
@@ -53,7 +53,6 @@ public class Invoice {
     }
 
     // Class constructor
-
     Invoice(String number, String descritpion, int quantity, double price) {
         setPartNumber(number);
         setPartDescription(descritpion);
@@ -66,7 +65,7 @@ public class Invoice {
 class InvoiceTest {
     public static void main(String[] args) { // main method
         Invoice test = new Invoice("20/52ha000",
-                "this is just a randome invoice object to test the functionality of the invoice class", 4, 230.50);
+                "this is just a random invoice object to test the functionality of the invoice class", 4, 230.50);
         System.out.println("the total amount for the invoice is : " + test.getInvoiceAmount());
         System.out.println("the price of each item purchased is : " + test.getPricePerItem());
     }
