@@ -1,10 +1,9 @@
-public class Triangle{
-    double L = 8.5;
-    double B = 5.5;
+public class Triangle {
 
-    public static void main(String args[]){
-        Triangle t = new Triangle();
-        double area = t.L * t.B;
+    public static void main(String args[]) {
+        double L = 8.5;
+        double B = 5.5;
+        double area = L * B;
         System.out.println(area);
     }
 }
