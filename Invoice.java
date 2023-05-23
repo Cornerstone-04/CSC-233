@@ -1,11 +1,11 @@
 public class Invoice {
-    // initialise instance variables
+    // declare instance variables
     private String partNumber;
     private String partDescription;
     private int quantityPurchased;
     private double pricePerItem;
 
-    // create get methods
+    // create getters and setters
     public String getPartNumber() {
         return this.partNumber;
     }
@@ -16,57 +16,62 @@ public class Invoice {
 
     public int getQuantityPurchased() {
         return this.quantityPurchased;
+
     }
 
     public double getPricePerItem() {
         return this.pricePerItem;
     }
 
-    // create set methods
-    public void setPartNumber(String partnumber) {
-        this.partNumber = partnumber;
+    public void setPartNumber(String part_no) {
+        this.partNumber = part_no;
     }
 
-    public void setPartDescription(String description) {
-        this.partNumber = description;
+    public void setPartDescription(String part_desc) {
+        this.partDescription = part_desc;
     }
 
-    public void setQuantityPurchased(int quantityPurchased) {
+    public void setQuantityPurchased(int quantity) {
         if (quantityPurchased > 0) {
-            this.quantityPurchased = quantityPurchased;
+            this.quantityPurchased = quantity;
         } else {
             this.quantityPurchased = 0;
         }
     }
 
     public void setPricePerItem(double price) {
-        if (price > 0) {
+        if (pricePerItem > 0) {
             this.pricePerItem = price;
         } else {
             this.pricePerItem = 0.0;
         }
     }
 
-    // get invoice amount method
-    public double getInvoiceAmount() {
-        return this.getPricePerItem() * this.quantityPurchased;
+// create class constructor
+    Invoice(String part_no, String part_desc, int quantity, double price) {
+        this.partNumber = part_no;
+        this.partDescription = part_desc;
+        this.pricePerItem = price;
+        this.quantityPurchased = quantity;
     }
 
-    // Class constructor
-    Invoice(String number, String descritpion, int quantity, double price) {
-        setPartNumber(number);
-        setPartDescription(descritpion);
-        setPricePerItem(price);
-        setQuantityPurchased(quantity);
+    // create invoice amount function
+    public double getInvoiceAmount() {
+        return this.pricePerItem * this.quantityPurchased;
     }
+
 }
 
-// test class for the invoice class
+// create test class
 class InvoiceTest {
-    public static void main(String[] args) { // main method
-        Invoice test = new Invoice("20/52ha000",
-                "this is just a random invoice object to test the functionality of the invoice class", 4, 230.50);
-        System.out.println("the total amount for the invoice is : " + test.getInvoiceAmount());
-        System.out.println("the price of each item purchased is : " + test.getPricePerItem());
+    public static void main(String[] args){
+        Invoice laptop =  new Invoice("#2atguuy", "Invoice generated for new HP Laptops", 24, 100.50);
+
+        // print results
+        System.out.println("Part Number: " + laptop.getPartNumber());
+        System.out.println("Part Description: " + laptop.getPartDescription());
+        System.out.println("Quantity purchased: " + laptop.getQuantityPurchased());
+        System.out.println("Price per item: " + laptop.getPricePerItem());
+        System.out.println("Total: " + laptop.getInvoiceAmount());
     }
 }

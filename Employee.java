@@ -1,14 +1,18 @@
 public class Employee {
+    // declare instance variables
     private String firstName;
     private String lastName;
     private double monthlySalary;
 
-    Employee(String fname, String lname, double salary) {
-        this.firstName = fname;
-        this.lastName = lname;
-        this.monthlySalary = salary;
+    // create class constructor
+    Employee(String FIRST_NAME, String LAST_NAME, double MONTHLY_SALARY) {
+        // initialise instance variables
+        this.firstName = FIRST_NAME;
+        this.lastName = LAST_NAME;
+        this.monthlySalary = MONTHLY_SALARY;
     }
 
+    // define getters and setters
     public String getFirstName() {
         return this.firstName;
     }
@@ -29,31 +33,38 @@ public class Employee {
         this.lastName = lname;
     }
 
-    public void setMonthlySalary(double salary) {
-        if (salary > 0) {
-            this.monthlySalary = salary;
+    public void setMonthlySalary(double msalary) {
+        if (monthlySalary > 0) {
+            this.monthlySalary = msalary;
         }
     }
 
 }
 
-class employeeTest {
+// create test class
+class EmployeeTest {
     public static void main(String[] args) {
-        Employee workerOne = new Employee("Cornerstone", "Ephraim", 15500);
-        Employee workerTwo = new Employee("Daniel", "Akintunde", 15000);
+        Employee emp1 = new Employee("John", "Doe", 10000);
+        Employee emp2 = new Employee("Jane", "Doe", 14000);
 
-        System.out.println(workerOne.getFirstName() + " " + workerOne.getLastName() + "'s yearly salary is : "
-                + workerOne.getMonthlySalary() * 12);
-        System.out.println(workerTwo.getFirstName() + " " + workerTwo.getLastName() + "'s yearly salary is : "
-                + workerTwo.getMonthlySalary() * 12);   
+        // display employees annual salary
+        System.out
+                .println(emp1.getFirstName() + " " + emp1.getLastName() + ":" + " " + emp1.getMonthlySalary() * 12
+                        + " " + "per annum");
+        System.out
+                .println(emp2.getFirstName() + " " + emp2.getLastName() + ":" + " " + emp2.getMonthlySalary() * 12
+                        + " " + "per annum");
 
-        workerOne.setMonthlySalary(workerOne.getMonthlySalary() + (workerOne.getMonthlySalary() * 0.1));
-        workerTwo.setMonthlySalary(workerTwo.getMonthlySalary() + (workerTwo.getMonthlySalary() * 0.1));
+        // increase salaries by 10%
+        emp1.setMonthlySalary(emp1.getMonthlySalary() + (emp1.getMonthlySalary() * 0.1));
+        emp2.setMonthlySalary(emp2.getMonthlySalary() + (emp2.getMonthlySalary() * 0.1));
 
-        System.out.println(workerOne.getFirstName() + " " + workerOne.getLastName() + "'s new yearly salary is : "
-                + workerOne.getMonthlySalary() * 12);
-        System.out.println(workerTwo.getFirstName() + " " + workerTwo.getLastName() + "'s new yearly salary is : "
-                + workerTwo.getMonthlySalary() * 12);
-
+        // print new salaries
+        System.out
+                .println(emp1.getFirstName() + " " + emp1.getLastName() + ":" + " " + emp1.getMonthlySalary() * 12
+                        + " " + "per annum" + "(10% raise)");
+        System.out
+                .println(emp2.getFirstName() + " " + emp2.getLastName() + ":" + " " + emp2.getMonthlySalary() * 12
+                        + " " + "per annum" + "(10% raise)");
     }
 }

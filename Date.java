@@ -1,56 +1,48 @@
+import javax.sound.sampled.SourceDataLine;
+
 public class Date {
-    // Instance Variables
-    private int year;
-    private int month;
-    private int day;
+    private int Month;
+    private int Day;
+    private int Year;
 
-    // Class constructor
-
-    Date(int day, int month, int year) {
-        this.day = day;
-        this.month = month;
-        this.year = year;
+    Date(int month, int day, int year) {
+        this.Month = month;
+        this.Day = day;
+        this.Year = year;
     }
 
-    // get methods for instance variables
     public int getMonth() {
-        return this.month;
-    }
-
-    public int getYear() {
-        return this.year;
+        return this.Month;
     }
 
     public int getDay() {
-        return this.day;
+        return this.Day;
     }
 
-    // set methods for instance variables
-    public void setDay(int day) {
-        this.day = day;
+    public int Year() {
+        return this.Year;
     }
 
     public void setMonth(int month) {
-        this.month = month;
+        this.Month = month;
+    }
+
+    public void setDay(int day) {
+        this.Day = day;
     }
 
     public void setYear(int year) {
-        this.year = year;
+        this.Year = year;
     }
 
-    // Display date method definition
-
     public void displayDate() {
-        System.out.println(this.day + "/" + this.month + "/" + this.year);
+        System.out.println(this.Day + "/" + this.Month + "/" + this.Year);
     }
 }
 
-class dateTest {
+class DateTest {
     public static void main(String[] args) {
-        Date test = new Date(7, 6, 2004);
-        test.displayDate();
-        System.out.println("june is the number " + test.getMonth() + " month of the year.");
-        test.setYear(2020);
+        Date test = new Date(24, 06, 2023);
         test.displayDate();
     }
 }
