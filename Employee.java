@@ -45,7 +45,7 @@ class employeeTest {
         System.out.println(workerOne.getFirstName() + " " + workerOne.getLastName() + "'s yearly salary is : "
                 + workerOne.getMonthlySalary() * 12);
         System.out.println(workerTwo.getFirstName() + " " + workerTwo.getLastName() + "'s yearly salary is : "
-                + workerTwo.getMonthlySalary() * 12);
+                + workerTwo.getMonthlySalary() * 12);   
 
         workerOne.setMonthlySalary(workerOne.getMonthlySalary() + (workerOne.getMonthlySalary() * 0.1));
         workerTwo.setMonthlySalary(workerTwo.getMonthlySalary() + (workerTwo.getMonthlySalary() * 0.1));
