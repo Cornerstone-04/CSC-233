@@ -6,7 +6,7 @@ public class Employee {
 
     // create class constructor
     Employee(String FIRST_NAME, String LAST_NAME, double MONTHLY_SALARY) {
-        // initialise instance variables
+        // initialize instance variables
         this.firstName = FIRST_NAME;
         this.lastName = LAST_NAME;
         this.monthlySalary = MONTHLY_SALARY;
@@ -60,11 +60,9 @@ class EmployeeTest {
         emp2.setMonthlySalary(emp2.getMonthlySalary() + (emp2.getMonthlySalary() * 0.1));
 
         // print new salaries
-        System.out
-                .println(emp1.getFirstName() + " " + emp1.getLastName() + ":" + " " + emp1.getMonthlySalary() * 12
-                        + " " + "per annum" + "(10% raise)");
-        System.out
-                .println(emp2.getFirstName() + " " + emp2.getLastName() + ":" + " " + emp2.getMonthlySalary() * 12
-                        + " " + "per annum" + "(10% raise)");
+        System.out.println(emp1.getFirstName() + " " + emp1.getLastName() + ":" + " " + emp1.getMonthlySalary() * 12
+                + " " + "per annum" + "(10% raise)");
+        System.out.println(emp2.getFirstName() + " " + emp2.getLastName() + ":" + " " + emp2.getMonthlySalary() * 12
+                + " " + "per annum" + "(10% raise)");
     }
 }
